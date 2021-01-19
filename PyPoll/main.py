@@ -36,13 +36,18 @@ with open(poll_data) as csvfile:
         elif(row[2]=="O'Tooley"):
             otooley_count = otooley_count + 1
         
-
+        khan_percent =round((khan_count/total_votes)*100,3)
+        correy_percent = round((correy_count/total_votes)*100,3)
+        li_percent = round((li_count/total_votes)*100,3)
+        otooley_percent = round((otooley_count/total_votes)*100,3)
 
 print(f"Election Results")
 print(f"----------------------------")
 print(f"Total Votes: {total_votes}")
 print(f"----------------------------")
-print(f"Khan: ({khan_count})")
-print(f"Correy: ({correy_count})")
-print(f"Li: ({li_count})")
-print(f"O'Tooley: ({otooley_count})")
+print(f"Khan: {khan_percent}% ({khan_count})")
+print(f"Correy: {correy_percent}% ({correy_count})")
+print(f"Li: {li_percent}% ({li_count})")
+print(f"O'Tooley:{otooley_percent}% ({otooley_count})")
+print(f"----------------------------")
+print(f"Winner: ")
