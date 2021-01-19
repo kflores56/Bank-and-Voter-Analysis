@@ -11,7 +11,7 @@ month = []
 amount = []
 
 #open and read CSV
-with open(budget_csv, newline="") as csvfile:
+with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
@@ -57,3 +57,5 @@ print(f"Total Profit: $ {net_amount}")
 print(f"Average Change: $ {average_monthly_change}")
 print(f"Greatest Increase in Profits: {high_profit_date} $ {high_profit}")
 print(f"Greastest Decrease in Profits: {low_profit_date} $ {low_profit}")
+
+#write file 
