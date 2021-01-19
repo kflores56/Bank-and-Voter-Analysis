@@ -28,6 +28,7 @@ net_amount = amount[0]
 monthly_change = 0
 high_profit = 0
 low_profit = 0
+average_monthly_change = 0 
 
 for n in range (1, total_months):
 
@@ -45,11 +46,14 @@ for n in range (1, total_months):
     elif current_change < low_profit:
         low_profit = current_change
         low_profit_date = month[n]
+    
+    #average change 
+    average_monthly_change = round(monthly_change/total_months,3)
 
 print(f"Financial Analysis")
 print(f"-----------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total Profit: $ {net_amount}")
-print(f"Average Change: $ {monthly_change}")
+print(f"Average Change: $ {average_monthly_change}")
 print(f"Greatest Increase in Profits: {high_profit_date} $ {high_profit}")
 print(f"Greastest Decrease in Profits: {low_profit_date} $ {low_profit}")
