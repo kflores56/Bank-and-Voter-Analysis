@@ -22,7 +22,7 @@ with open(budget_csv, newline="") as csvfile:
         
         #append to lists
         month.append(row[0])
-        amount.append(float(row[1]))      
+        amount.append(int(row[1]))      
 
 net_amount = amount[0]
 monthly_change = 0
@@ -39,16 +39,16 @@ for n in range (1, total_months):
     current_change = amount[n] - amount[n-1]
     monthly_change += current_change
 
+    #average change 
+    average_monthly_change = round(monthly_change/total_months,2)
+    
     #greatest increase and decrease
     if current_change > high_profit:
         high_profit = current_change
         high_profit_date = month [n]
     elif current_change < low_profit:
         low_profit = current_change
-        low_profit_date = month[n]
-    
-    #average change 
-    average_monthly_change = round(monthly_change/total_months,3)
+        low_profit_date = month[n] 
 
 print(f"Financial Analysis")
 print(f"-----------------------------")
