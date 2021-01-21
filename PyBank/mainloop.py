@@ -3,7 +3,7 @@ import os
 import csv
 
 #Set CSV path
-budget_csv = os.path.join('PyBank', 'Resources', 'budget_data.csv')
+budget_csv = os.path.join('Resources', 'budget_data.csv')
 
 #Set zero
 total_months = 0
@@ -14,7 +14,6 @@ high_profit = 0
 high_profit_date = ""
 low_profit = 0
 low_profit_date = ""
-
 
 #open and read CSV
 with open(budget_csv, newline="") as csvfile:
@@ -31,6 +30,7 @@ with open(budget_csv, newline="") as csvfile:
 
         #Find change in monthly amounts
         current_profit = int(row[1])
+
         if(current_profit >=0):
             if(current_profit > high_profit):
                 high_profit = current_profit
@@ -48,7 +48,5 @@ print(f"-----------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total Profit: $ {net_amount}")
 print(f"Average Change: $ {average_change}")
-print(f"Greatest Increase in Profit: {high_profit_date} $ {high_profit}")
-print(f"Greatest Decrease in Profit: {low_profit_date} $ {low_profit}")
-    
-
+print(f"Greatest Increase in Profit: {high_profit_date} ($ {high_profit})")
+print(f"Greatest Decrease in Profit: {low_profit_date} ($ {low_profit})")

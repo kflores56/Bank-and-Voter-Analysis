@@ -3,7 +3,7 @@ import os
 import csv
 
 #Set CSV path
-budget_csv = os.path.join('PyBank', 'Resources', 'budget_data.csv')
+budget_csv = os.path.join('Resources', 'budget_data.csv')
 
 #Set variables 
 total_months = 0
@@ -13,7 +13,7 @@ amount = []
 #open and read CSV
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    csv_header = next(csvreader)
+    header = next(csvreader)
 
     for row in csvreader:
         
@@ -56,6 +56,22 @@ print(f"Total Months: {total_months}")
 print(f"Total Profit: ${net_amount}")
 print(f"Average Change: ${average_monthly_change}")
 print(f"Greatest Increase in Profits: {high_profit_date} (${high_profit})")
-print(f"Greastest Decrease in Profits: {low_profit_date} (${low_profit})")
+print(f"Greatest Decrease in Profits: {low_profit_date} (${low_profit})")
 
-#write file 
+output = (
+    f"Financial Analysis"
+
+    f"-----------------------------"
+
+    f"Total Months: {total_months}"
+
+    f"Total Profit: ${net_amount}"
+
+    f"Average Change: ${average_monthly_change}"
+
+    f"Greatest Increase in Profits: {high_profit_date} (${high_profit})"
+    
+    f"Greatest Decrease in Profits: {low_profit_date} (${low_profit})"
+)
+with open ("output.txt", 'w') as txt_file:
+    txt_file.write(output)
