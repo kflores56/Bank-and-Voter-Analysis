@@ -30,22 +30,22 @@ high_profit = 0
 low_profit = 0
 average_monthly_change = 0 
 
-for n in range (1, total_months):
+for i in range (1, total_months):
 
     #Net profit amount
-    net_amount += amount[n]
+    net_amount += amount[i]
 
     #Find change in monthly amounts
-    current_change = amount[n] - amount[n-1]
+    current_change = amount[i] - amount[i-1]
     monthly_change += current_change
     
     #greatest increase and decrease
     if current_change > high_profit:
         high_profit = current_change
-        high_profit_date = month [n]
+        high_profit_date = month [i]
     elif current_change < low_profit:
         low_profit = current_change
-        low_profit_date = month[n] 
+        low_profit_date = month[i] 
 
 #average change 
 average_monthly_change = round(monthly_change/total_months,2)
