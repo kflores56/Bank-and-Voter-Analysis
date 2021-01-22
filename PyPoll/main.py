@@ -3,7 +3,7 @@ import os
 import csv
 
 #create file path
-poll_data = os.path.join('PyPoll', 'Resources', 'election_data.csv')
+poll_data = os.path.join('Resources', 'election_data.csv')
 
 votes = []
 county = []
@@ -64,3 +64,19 @@ print(f"O'Tooley:{otooley_percent}% ({otooley_count})")
 print(f"----------------------------")
 print(f"Winner: {winner}")
 print(f"----------------------------")
+
+output = (
+    f"Election Results"
+    f"----------------------------"
+    f"Total Votes: {total_votes}"
+    f"----------------------------"
+    f"Khan: {khan_percent}% ({khan_count})"
+    f"Correy: {correy_percent}% ({correy_count})"
+    f"Li: {li_percent}% ({li_count})"
+    f"O'Tooley:{otooley_percent}% ({otooley_count})"
+    f"----------------------------"
+    f"Winner: {winner}"
+    f"----------------------------"
+)
+with open ("txt_output", 'w') as txtfile: 
+    txtfile.write(output)
