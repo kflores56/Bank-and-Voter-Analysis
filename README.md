@@ -18,6 +18,6 @@ Note: There are two codes included for this task. I believe that mainV1.py is mo
 ### PyPoll
 
 This code will analyse the include poll results to find:
-  - The tota number of votes cast
+  - The total number of votes cast
   - Each candidate and their corresponding percentage and number of votes won
   - The winner of the election based on popular vote
