@@ -1,4 +1,4 @@
-# Bank and Voter Result Analysis
+# Bank & Voter Result Analysis
 
 ### This challenge included tasks to write two codes:
   - PyBank
